@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - 'mern/backend/**'
-      - '.github/workflows/backend-ci.yml'
       
 jobs:
   trivy-fs-scan:
