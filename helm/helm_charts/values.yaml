@@ -1,0 +1,13 @@
+frontend:
+  repository: 8192027760/frontend
+  port: 5173
+  tag: v1
+
+backend:
+  reapository: 8192027760/backend
+  port: 5050
+  tag: v1
+
+mongo:
+  image: mongo:latest
+  port: 27017
