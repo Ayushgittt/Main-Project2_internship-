@@ -98,5 +98,7 @@ jobs:
           git config --global user.name "Ayushgittt"
           git pull origin main
           git add helm/helm_charts/values.yaml
-          git commit -m "Update frontend tagg"
+          git commit -m "Update frontend tag"
           git push origin main
+
+          
