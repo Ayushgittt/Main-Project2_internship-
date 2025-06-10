@@ -1,7 +1,7 @@
 frontend:
   repository: 8192027760/frontend
   port: 5173
-  tag: v1
+  tag: "15560600347"
 
 backend:
   reapository: 8192027760/backend
