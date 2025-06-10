@@ -3,11 +3,10 @@ name: CI Pipeline - Frontend (React)
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'mern/frontend/**'
-      - '.github/workflows/frontend-ci.yml'
-  paths-ignore:
-    - 'helm/helm_charts/values.yaml'
+    
+    paths-ignore:
+        - README.md
+        - helm/helm_charts/values.yaml
 
 jobs:
   trivy-fs-scan:
