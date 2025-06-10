@@ -98,4 +98,4 @@ jobs:
           git config --global user.name "Ayushgittt"
           git add helm/helm_charts/values.yaml
           git commit -m "Update backend tag"
-          git push
+          git push origin main

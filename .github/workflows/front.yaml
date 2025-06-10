@@ -100,5 +100,3 @@ jobs:
           git add helm/helm_charts/values.yaml
           git commit -m "Update frontend tag"
           git push origin main
-
-          
