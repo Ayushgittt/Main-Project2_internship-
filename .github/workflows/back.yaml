@@ -3,9 +3,7 @@ name: CI Pipeline - Backend (Node)
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'mern/backend/**'
-
+    
     paths-ignore:
         - README.md
         - helm/helm_charts/values.yaml
