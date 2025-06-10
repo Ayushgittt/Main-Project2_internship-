@@ -1,0 +1,33 @@
+name: Helm Tag Updater
+
+on:
+  workflow_run:
+    workflows: ["CI Frontend (React)", "CI Backend"]
+    types:
+      - completed
+
+jobs:
+  update-helm-tags:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.TOKEN }}
+
+      - name: Update Frontend and Backend Tags in Helm Chart
+        run: |
+          sed -i '/backend:/,/tag:/s/tag:.*/tag: "${{ github.run_id }}"/' helm/helm_charts/values.yaml
+          
+          sed -i '/frontend:/,/tag:/s/tag:.*/tag: "${{ github.run_id }}"/' helm/helm_charts/values.yaml
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "Ayushgittt"
+          git config --global user.email "bhandariayush960@gmail.com"
+
+          git add helm/helm_charts/values.yaml
+          git commit -m "Update frontend and backend tags to ${{ github.run_id }}"
+          git push
