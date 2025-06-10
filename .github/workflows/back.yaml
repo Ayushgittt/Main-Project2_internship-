@@ -2,13 +2,11 @@ name: CI Pipeline - Backend (Node)
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
     paths:
       - 'mern/backend/**'
-      - '.github/workflows/back.yaml'
-    
-  paths-ignore:
-    - 'helm/helm_charts/values.yaml'
+      - '.github/workflows/backend-ci.yml'
       
 jobs:
   trivy-fs-scan:
