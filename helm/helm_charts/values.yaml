@@ -6,7 +6,7 @@ frontend:
 backend:
   reapository: 8192027760/backend
   port: 5050
-  tag: "15562545969"
+  tag: "15562819842"
 
 mongo:
   image: mongo:latest
