@@ -69,12 +69,12 @@ jobs:
           context: ./mern/backend
           file: ./mern/backend/Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/mern-backend:${{ github.run_id }}
+          tags: ${{ secrets.DOCKER_USERNAME }}/backend:${{ github.run_id }}
 
       - name: Trivy Image Scan
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ secrets.DOCKER_USERNAME }}/mern-backend:${{ github.run_id }}
+          image-ref: ${{ secrets.DOCKER_USERNAME }}/backend:${{ github.run_id }}
           format: 'table'
           exit-code: '0'
           ignore-unfixed: true
