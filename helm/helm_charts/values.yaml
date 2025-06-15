@@ -9,5 +9,6 @@ backend:
   tag: "15653174660"
 
 mongo:
-  image: mongo:latest
+  repository: mongo
+  tag: latest
   port: 27017
