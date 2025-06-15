@@ -4,7 +4,7 @@ frontend:
   tag: "15663765908"
 
 backend:
-  reapository: 8192027760/backend
+  repository: 8192027760/backend
   port: 5050
   tag: "15663765908"
 

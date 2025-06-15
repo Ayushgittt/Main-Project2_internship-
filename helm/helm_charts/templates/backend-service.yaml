@@ -7,6 +7,6 @@ spec:
     app: backend
   ports:
     - protocol: TCP
-      port: 5000
+      port: 5050
       targetPort: {{ .Values.backend.port }}
   type: ClusterIP
