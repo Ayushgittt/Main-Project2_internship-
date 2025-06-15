@@ -1,14 +1,15 @@
 name: CI Deployment
 
 on:
-  workflow_run:
-    workflows: ["CI Frontend (React)", "CI Backend"]
-    types:
-      - completed
+  push:
+    branches: [ main ]
+    
+    paths-ignore:
+        - README.md
+        - helm/helm_charts/values.yaml
 
 jobs:
   docker-build-push-frontend:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: Build & Push Frontend Docker Image
     runs-on: ubuntu-latest
     steps:
@@ -75,6 +76,7 @@ jobs:
   
   update-helm-tags:
     runs-on: ubuntu-latest
+    needs: [docker-build-push-frontend, docker-build-push-backend]
 
     steps:
       - name: Checkout Code

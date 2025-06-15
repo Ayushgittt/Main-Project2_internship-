@@ -6,7 +6,6 @@ on:
     
     paths-ignore:
         - README.md
-        - helm/helm_charts/values.yaml
       
 jobs:
   trivy-fs-scan:

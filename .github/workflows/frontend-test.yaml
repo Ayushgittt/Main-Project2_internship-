@@ -6,7 +6,6 @@ on:
     
     paths-ignore:
         - README.md
-        - helm/helm_charts/values.yaml
 
 jobs:
   trivy-fs-scan:
@@ -45,4 +44,3 @@ jobs:
         with:
           name: frontend-sast-report
           path: frontend-sast-report.json
-
