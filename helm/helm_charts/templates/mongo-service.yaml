@@ -9,4 +9,4 @@ spec:
     - protocol: TCP
       port: 27017
       targetPort: {{ .Values.mongo.port }}
-  type: ClusterIP
+  type: NodePort

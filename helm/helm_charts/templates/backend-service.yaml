@@ -9,4 +9,4 @@ spec:
     - protocol: TCP
       port: 5050
       targetPort: {{ .Values.backend.port }}
-  type: ClusterIP
+  type: NodePort
