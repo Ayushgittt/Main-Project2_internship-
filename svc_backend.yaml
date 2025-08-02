@@ -4,7 +4,7 @@ metadata:
   name: api
 spec: 
   ports:
-  - port: 3500
+  - port: 5050
     protocol: TCP
   type: ClusterIP
   selector:

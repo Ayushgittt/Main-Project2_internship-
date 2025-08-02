@@ -17,10 +17,10 @@ spec:
     spec:
       containers:
         - name: backend
-          image: 8192027760/backend:latest
+          image: 8192027760/backend:16693315876
           imagePullPolicy: Always
           ports:
-            - containerPort: 3500
+            - containerPort: 5050
           env:
             - name: MONGO_CONN_STR
               value: mongodb://mongodb-svc:27017/todo?directConnection=true
