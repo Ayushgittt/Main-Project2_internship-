@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  labels:
+    role: api
+    env: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      role: api
+  template:
+    metadata:
+      labels:
+        role: api
+    spec:
+      containers:
+        - name: backend
+          image: 8192027760/backend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3500
+          env:
+            - name: MONGO_CONN_STR
+              value: mongodb://mongodb-svc:27017/todo?directConnection=true
+            - name: MONGO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-sec
+                  key: username
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-sec
+                  key: password
