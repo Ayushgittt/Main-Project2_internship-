@@ -10,5 +10,5 @@ backend:
 
 mongo:
   repository: mongo
-  tag: 5.0
+  tag: 4.4.6
   port: 27017

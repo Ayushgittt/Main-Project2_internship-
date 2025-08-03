@@ -20,6 +20,3 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: {{ .Values.frontend.port }}
-          env:
-            - name: REACT_APP_BACKEND_URL
-              value: http://api:5050
