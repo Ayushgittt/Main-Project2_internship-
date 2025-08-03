@@ -1,12 +1,12 @@
 frontend:
   repository: 8192027760/frontend
   port: 5173
-  tag: "15682334395"
+  tag: "16701425626"
 
 backend:
   repository: 8192027760/backend
   port: 5050
-  tag: "16693315876"
+  tag: "16701425626"
 
 mongo:
   repository: mongo
