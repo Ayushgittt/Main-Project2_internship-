@@ -68,6 +68,10 @@ ArgoCD automatically syncs manifests from GitHub and keeps the cluster state in 
 * Replaces eksctl for more reusable, automated infrastructure setup.
 ### 3.Add SonarQube for Code Quality & Static Analysis:
 * Integrate it into GitHub Actions for early feedback during CI.
+### 4. Use Ingress Instead of LoadBalancer Services
+* Implementing an Ingress (like NGINX or AWS ALB) to manage routing between frontend and backend.
+### 5. Enable SSL/TLS for Secure Communication
+* Use of SSL certificates (e.g., with Let's Encrypt via Cert-Manager) on the Ingress to ensure secure (HTTPS) communication between users and services in the cluster.
 
 ---
 ## Pods Deployment 
