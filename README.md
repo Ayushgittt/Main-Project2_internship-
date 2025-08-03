@@ -84,5 +84,7 @@ ArgoCD automatically syncs manifests from GitHub and keeps the cluster state in 
 ---
 ## Video Link for this Project
 
+https://drive.google.com/file/d/1dfaWysTmIurozatwc_x_3B9B9DahoWs3/view?usp=sharing
+
 
 
