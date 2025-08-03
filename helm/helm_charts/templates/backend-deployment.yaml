@@ -2,21 +2,35 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: backend
+  labels:
+    role: api
+    env: demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: backend
+      role: api
   template:
     metadata:
       labels:
-        app: backend
+        role: api
     spec:
       containers:
         - name: backend
           image: {{ .Values.backend.repository }}:{{ .Values.backend.tag }}
+          imagePullPolicy: Always
           ports:
-            - containerPort: {{ .Values.backend.port }}
+            - containerPort: 5050
           env:
-            - name: MONGO_URL
-              value: "mongodb://mongo:27017/mern"
+            - name: MONGO_CONN_STR
+              value: mongodb://mongodb-svc:27017/todo?directConnection=true
+            - name: MONGO_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-sec
+                  key: username
+            - name: MONGO_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-sec
+                  key: password
